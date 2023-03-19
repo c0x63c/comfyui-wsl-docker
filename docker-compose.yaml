@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  auto:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: comfyui01
+    environment:
+      gpus: 'all'
+    ports:
+      - '8188:8188/tcp'
+    network_mode: 'host'
+    command: python3 main.py
+    volumes:
+      - ./volumes/models:/ComfyUI/models
+      - ./volumes/input:/ComfyUI/input
+      - ./volumes/output:/ComfyUI/output
+    logging:
+      options:
+        max-size: '200k'
+        max-file: '10'
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
