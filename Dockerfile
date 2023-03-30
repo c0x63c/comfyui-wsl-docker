@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.7.1-base-ubuntu22.04
+FROM nvidia/cuda:11.8.0-base-ubuntu22.04
 
 ENV PYTHONUNBUFFERED=1 
 
@@ -16,7 +16,7 @@ WORKDIR /ComfyUI
 
 # requirements pytorch
 RUN pip install --upgrade -r requirements.txt \
-&& pip install torch==1.13.1 torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu117 xformers
+&& pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118 xformers
 
 # shell
 CMD ["/bin/bash"]

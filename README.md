@@ -15,7 +15,7 @@ docker compose build
 ```
 
 * . Place *.ckpt and *.safetensors in /volumes/models/checkpoints
-* . LoRA and LoCoN in /volumes/models/loras
+* . LoRA and LoCoN and LoHA in /volumes/models/loras
 
 ## Usage
 
@@ -27,7 +27,8 @@ http://localhost:8188
 
 ## Version
 
-* 2023/03/19
+* 2023/03/30
+update cuda11.8
 
 ## Acknowledgments
 
