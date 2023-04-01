@@ -3,16 +3,15 @@ services:
   auto:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: ./service/Dockerfile
     container_name: comfyui01
     environment:
       gpus: 'all'
     ports:
       - '8188:8188/tcp'
     network_mode: 'host'
-    command: python3 main.py
     volumes:
-      - ./volumes/models:/ComfyUI/models
+      - ./volumes/ComfyUI:/volumes/ComfyUI
       - ./volumes/input:/ComfyUI/input
       - ./volumes/output:/ComfyUI/output
     logging:

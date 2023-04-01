@@ -19,4 +19,7 @@ RUN pip install --upgrade -r requirements.txt \
 && pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118 xformers
 
 # shell
-CMD ["/bin/bash"]
+COPY ./service/entrypoint.sh /docker/entrypoint.sh
+RUN chmod +x /docker/entrypoint.sh
+ENTRYPOINT ["/docker/entrypoint.sh"]
+CMD python3 main.py ${CLI_ARGS}

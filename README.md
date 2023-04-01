@@ -14,8 +14,9 @@
 docker compose build
 ```
 
-* . Place *.ckpt and *.safetensors in /volumes/models/checkpoints
-* . LoRA and LoCoN and LoHA in /volumes/models/loras
+* . Place checkpoint files(*.ckpt and *.safetensors) in /volumes//ComfyUI/models/checkpoints
+* . Place vae files(*.pt and *.safetensors) in /volumes//ComfyUI/models/vae
+* . LoRA and LoCoN and LoHA in /volumes/ComfyUI/models/loras
 
 ## Usage
 
@@ -27,10 +28,11 @@ http://localhost:8188
 
 ## Version
 
-* 2023/03/30
-update cuda11.8
+* 2023/04/01
+update directory and entrypoint
 
 ## Acknowledgments
 
 * [ComfyUI](https://github.com/comfyanonymous/ComfyUI) 
 * [nVidia 525 + Cuda 11.8 + Python 3.10 + pyTorch GPU Docker image](https://dev.to/ordigital/nvidia-525-cuda-118-python-310-pytorch-gpu-docker-image-1l4a)
+* [stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) 
