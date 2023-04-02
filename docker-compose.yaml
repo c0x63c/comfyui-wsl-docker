@@ -11,7 +11,9 @@ services:
       - '8188:8188/tcp'
     network_mode: 'host'
     volumes:
-      - ./volumes/ComfyUI:/volumes/ComfyUI
+      - ./volumes/configs:/volumes/mount/configs
+      - ./volumes/models:/ComfyUI/models
+      - ./volumes/custom_node:/ComfyUI/custom_node
       - ./volumes/input:/ComfyUI/input
       - ./volumes/output:/ComfyUI/output
     logging:

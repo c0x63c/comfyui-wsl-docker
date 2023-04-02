@@ -14,9 +14,9 @@
 docker compose build
 ```
 
-* . Place checkpoint files(*.ckpt and *.safetensors) in /volumes//ComfyUI/models/checkpoints
-* . Place vae files(*.pt and *.safetensors) in /volumes//ComfyUI/models/vae
-* . LoRA and LoCoN and LoHA in /volumes/ComfyUI/models/loras
+* Place checkpoint files(*.ckpt and *.safetensors) in /volumes/models/checkpoints
+* Place vae files(*.pt and *.safetensors) in /volumes/models/vae
+* LoRA and LoCoN and LoHA in /volumes/models/loras
 
 ## Usage
 
@@ -28,8 +28,8 @@ http://localhost:8188
 
 ## Version
 
-* 2023/04/01
-update directory and entrypoint
+* 2023/04/02
+fix directory
 
 ## Acknowledgments
 

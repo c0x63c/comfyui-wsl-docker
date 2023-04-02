@@ -4,8 +4,7 @@ set -Eeuo pipefail
 declare -A MOUNTS
 
 # mount folders
-MOUNTS["/ComfyUI/models"]="/volumes/ComfyUI/models"
-MOUNTS["/ComfyUI/custom_node"]="/volumes/ComfyUI/custom_node"
+MOUNTS["/ComfyUI/models/configs"]="/volumes/mount/configs"
 
 for to_path in "${!MOUNTS[@]}"; do
   set -Eeuo pipefail
@@ -15,7 +14,11 @@ for to_path in "${!MOUNTS[@]}"; do
   fi
   if [ -d "$to_path" ]; then
     to_path_file="${to_path}/*"
-    cp -p -r $to_path_file $from_path
+    ls $to_path_file >/dev/null 2>&1 
+    if [ $? -e 0 ]; then 
+      to_path_file="${to_path}/*"
+      cp -p -r $to_path_file $from_path
+    fi
   fi 
   rm -rf "${to_path}"
   mkdir -vp "$(dirname "${to_path}")"
