@@ -15,8 +15,8 @@ RUN git clone https://github.com/comfyanonymous/ComfyUI.git
 WORKDIR /ComfyUI
 
 # requirements pytorch
-RUN pip install --upgrade -r requirements.txt \
-&& pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118 xformers
+RUN pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118 xformers \
+pip install -r requirements.txt
 
 # shell
 COPY ./service/entrypoint.sh /docker/entrypoint.sh
