@@ -28,8 +28,8 @@ http://localhost:8188
 
 ## Version
 
-* 2023/04/02
-fix directory
+* 2023/09/23
+fix cuda update order
 
 ## Acknowledgments
 
