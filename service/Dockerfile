@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.8.0-base-ubuntu22.04
+FROM nvidia/cuda:12.1.0-base-ubuntu22.04
 
 ENV PYTHONUNBUFFERED=1 
 
@@ -15,8 +15,8 @@ RUN git clone https://github.com/comfyanonymous/ComfyUI.git
 WORKDIR /ComfyUI
 
 # requirements pytorch
-RUN pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118 xformers \
-pip install -r requirements.txt
+RUN pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu121 \
+    pip install -r requirements.txt
 
 # shell
 COPY ./service/entrypoint.sh /docker/entrypoint.sh

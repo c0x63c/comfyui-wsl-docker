@@ -15,9 +15,9 @@ for to_path in "${!MOUNTS[@]}"; do
   if [ -d "$to_path" ]; then
     to_path_file="${to_path}/*"
     ls $to_path_file >/dev/null 2>&1 
-    if [ $? -e 0 ]; then 
+    if [ $? -ne 0 ]; then 
       to_path_file="${to_path}/*"
-      cp -p -r $to_path_file $from_path
+      cp -p -r $from_path $to_path_file
     fi
   fi 
   rm -rf "${to_path}"
