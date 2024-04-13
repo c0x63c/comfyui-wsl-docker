@@ -21,5 +21,4 @@ RUN pip install torch torchvision torchaudio --extra-index-url https://download.
 # shell
 COPY ./service/entrypoint.sh /docker/entrypoint.sh
 RUN chmod +x /docker/entrypoint.sh
-ENTRYPOINT ["/docker/entrypoint.sh"]
-CMD python3 main.py ${CLI_ARGS}
+ENTRYPOINT ["/docker/entrypoint.sh", "python3 main.py"]
