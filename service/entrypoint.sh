@@ -28,4 +28,4 @@ for to_path in "${!MOUNTS[@]}"; do
   echo Mounted $(basename "${from_path}")
 done
 
-eval "$@"
+exec "$@"
