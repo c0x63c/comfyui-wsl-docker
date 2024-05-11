@@ -16,7 +16,6 @@ docker compose build
 
 * Place checkpoint files(*.ckpt and *.safetensors) in /volumes/models/checkpoints
 * Place vae files(*.pt and *.safetensors) in /volumes/models/vae
-* Place custom_nodes in /volumes/custom_nodes
 * LoRA and LoCoN and LoHA in /volumes/models/loras
 
 ## Usage
@@ -29,8 +28,7 @@ http://localhost:8188
 
 ## Version
 
-* 2024/04/13
-Modification of folder,modification of entrypoint.sh
+* 2023/05/11 fix: Update directory configuration to the latest,update entrypoint shell
 
 ## Acknowledgments
 

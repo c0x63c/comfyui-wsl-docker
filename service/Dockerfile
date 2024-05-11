@@ -6,7 +6,7 @@ ENV PYTHONUNBUFFERED=1
 # python3
 RUN apt update -y -q && DEBIAN_FRONTEND=noninteractive apt install -y -q --no-install-recommends \
     software-properties-common apt-utils \
-    curl git git-lfs vim \
+    curl git git-lfs vim ffmpeg \
     python3.10 pip \
     && rm -rf /var/lib/apt/lists/*
 
@@ -21,4 +21,5 @@ RUN pip install torch torchvision torchaudio --extra-index-url https://download.
 # shell
 COPY ./service/entrypoint.sh /docker/entrypoint.sh
 RUN chmod +x /docker/entrypoint.sh
-ENTRYPOINT ["/docker/entrypoint.sh", "python3 main.py"]
+ENTRYPOINT ["/docker/entrypoint.sh"]
+CMD python3 main.py ${CLI_ARGS}

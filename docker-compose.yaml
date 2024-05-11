@@ -5,8 +5,6 @@ services:
       context: .
       dockerfile: ./service/Dockerfile
     container_name: comfyui01
-    environment:
-      gpus: 'all'
     ports:
       - '8188:8188/tcp'
     network_mode: 'host'
@@ -23,4 +21,6 @@ services:
       resources:
         reservations:
           devices:
-            - capabilities: [gpu]
+            - driver: nvidia
+              device_ids: ['0']
+              capabilities: [gpu]
