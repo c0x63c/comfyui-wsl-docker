@@ -16,6 +16,7 @@ docker compose build
 
 * Place checkpoint files(*.ckpt and *.safetensors) in /volumes/models/checkpoints
 * Place vae files(*.pt and *.safetensors) in /volumes/models/vae
+* Place custom_nodes in /volumes/custom_nodes
 * LoRA and LoCoN and LoHA in /volumes/models/loras
 
 ## Usage
