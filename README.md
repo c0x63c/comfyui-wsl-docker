@@ -1,3 +1,6 @@
+### Description
+* ComfyUI's docker compose for WSL2 (GPU support).
+* The feature is that folders under volumes are treated as symbolic links in docker, so there is no need to copy local files into docker.
 
 ### Prerequisites
 
