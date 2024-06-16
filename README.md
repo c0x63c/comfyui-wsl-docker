@@ -17,10 +17,10 @@
 docker compose build --build-arg UID="$(id -u)" --build-arg GID="$(id -g)" 
 ```
 
-* Place checkpoint files (*.ckpt and *.safetensors) in /volumes/models/checkpoints.
-* Put vae files (*.pt and *.safetensors) in /volumes/models/vae.
-* Place LoRA, LoCoN and LoHA in /volumes/models/lolas.
-* Output files are placed in /volumes/output/.
+* チェックポイントファイル（*.ckpt と *.safetensors）を /volumes/models/checkpoints に置きます.
+* vaeファイル(*.ptと*.safetensors)を/volumes/models/vaeに置きます.
+* LoRAとLoCoNとLoHAを/volumes/models/lolasに置きます.
+* 出力ファイルは/volumes/output/に出力されます。
 
 ## Usage
 
