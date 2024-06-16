@@ -4,6 +4,11 @@ services:
     build:
       context: .
       dockerfile: ./service/Dockerfile
+      args:
+        - UID
+        - GID
+        - USERNAME=docker
+        - GROUPNAME=docker
     container_name: comfyui01
     environment:
       CLI_ARGS: ''

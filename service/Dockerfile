@@ -1,6 +1,19 @@
 FROM nvidia/cuda:12.1.0-base-ubuntu22.04
 
+ARG UID
+ARG GID
+ARG USERNAME
+ARG GROUPNAME
 ENV PYTHONUNBUFFERED=1 
+
+# user&group
+RUN groupadd -g ${GID} ${GROUPNAME} -f && \
+    useradd -m -s /bin/bash -u ${UID} -g ${GID} ${USERNAME}
+
+# shell
+COPY ./service/entrypoint.sh /docker/entrypoint.sh
+RUN chmod +x /docker/entrypoint.sh \
+    && chown ${GROUPNAME}:${USERNAME} /docker/entrypoint.sh
 
 # system
 # python3
@@ -11,15 +24,15 @@ RUN apt update -y -q && DEBIAN_FRONTEND=noninteractive apt install -y -q --no-in
     && rm -rf /var/lib/apt/lists/*
 
 # git
-RUN git clone https://github.com/comfyanonymous/ComfyUI.git
+RUN git clone https://github.com/comfyanonymous/ComfyUI.git \
+    && chown -R ${GROUPNAME}:${USERNAME} /ComfyUI
 WORKDIR /ComfyUI
+USER ${USERNAME}
 
 # requirements pytorch
 RUN pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu121 \
     pip install -r requirements.txt
 
-# shell
-COPY ./service/entrypoint.sh /docker/entrypoint.sh
-RUN chmod +x /docker/entrypoint.sh
+# entry
 ENTRYPOINT ["/docker/entrypoint.sh"]
 CMD python3 main.py ${CLI_ARGS}

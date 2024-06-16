@@ -1,6 +1,6 @@
 ### Description
-* ComfyUIのWSL2向けdocker compose(GPU対応)です.
-* 特徴としては,volumes配下のフォルダはdocker内でシンボリックリンクとして扱われる為,ローカルのファイルをvolumes配下のフォルダに配置するのみで大丈夫です.
+* ComfyUI's docker compose for WSL2 (GPU support).
+* The feature is that folders under volumes are treated as symbolic links in docker, so you only need to place local files in the volumes folder.
 
 ### Prerequisites
 
@@ -8,11 +8,11 @@
 * NVidia video card (RTX3060 12GB)
 * WSL2 (32GB and operation confirmed on Ubuntu 20.04)
 
-*上記以外の構成では未確認.
+*Not confirmed in other configurations than those listed above.
 
 ### Installing
 
-* 以下のコマンドでDockerをビルド.
+* Build Docker with the following command
 ```
 docker compose build --build-arg UID="$(id -u)" --build-arg GID="$(id -g)" 
 ```
@@ -24,19 +24,19 @@ docker compose build --build-arg UID="$(id -u)" --build-arg GID="$(id -g)"
 
 ## Usage
 
-* Installing実行後に以下を実行して下さい.
+* After build, do the following.
 ```
 docker compose up -d
 ```
-* docker compose up -d の後、以下にアクセスして下さい.
+* After docker compose up -d, access the following.
 ```
 http://localhost:8188
 ```
-* 終了する場合はdocker compose downして下さい.
+* docker compose down to exit.
 
 ## Version
 
-* 2023/06/16 fix: Changed to specify UID,GID.
+* 2023/05/11 fix: Update directory configuration to the latest,update entrypoint shell
 
 ## Acknowledgments
 
