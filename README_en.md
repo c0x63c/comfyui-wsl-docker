@@ -36,7 +36,7 @@ http://localhost:8188
 
 ## Version
 
-* 2023/05/11 fix: Update directory configuration to the latest,update entrypoint shell
+* 2023/06/16 fix: Changed to specify UID,GID.
 
 ## Acknowledgments
 
