@@ -30,8 +30,12 @@ WORKDIR /ComfyUI
 USER ${USERNAME}
 
 # requirements pytorch
-RUN pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu121 \
-    pip install -r requirements.txt
+#RUN pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu121 \
+#    pip install -r requirements.txt
+
+RUN pip install -r requirements.txt \
+    && pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu124 \
+    && pip install bitsandbytes
 
 # entry
 ENTRYPOINT ["/docker/entrypoint.sh"]

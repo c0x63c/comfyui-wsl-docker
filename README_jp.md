@@ -1,6 +1,6 @@
 ### Description
-* ComfyUI's docker compose for WSL2 (GPU support).
-* The feature is that folders under volumes are treated as symbolic links in docker, so you only need to place local files in the volumes folder.
+* ComfyUIのWSL2向けdocker compose(GPU対応)です.
+* 特徴としては,volumes配下のフォルダはdocker内でシンボリックリンクとして扱われる為,ローカルのファイルをvolumes配下のフォルダに配置するのみで大丈夫です.
 
 ### Prerequisites
 
@@ -8,31 +8,31 @@
 * NVidia video card (RTX3060 12GB)
 * WSL2 (32GB and operation confirmed on Ubuntu 20.04)
 
-*Not confirmed in other configurations than those listed above.
+*上記以外の構成では未確認.
 
 ### Installing
 
-* Build Docker with the following command
+* 以下のコマンドでDockerをビルド.
 ```
 docker compose build --build-arg UID="$(id -u)" --build-arg GID="$(id -g)" 
 ```
 
-* Place checkpoint files (*.ckpt and *.safetensors) in /volumes/models/checkpoints.
-* Put vae files (*.pt and *.safetensors) in /volumes/models/vae.
-* Place LoRA, LoCoN and LoHA in /volumes/models/lolas.
-* Output files are placed in /volumes/output/.
+* チェックポイントファイル（*.ckpt と *.safetensors）を /volumes/models/checkpoints に置きます.
+* vaeファイル(*.ptと*.safetensors)を/volumes/models/vaeに置きます.
+* LoRAとLoCoNとLoHAを/volumes/models/lolasに置きます.
+* 出力ファイルは/volumes/output/に出力されます。
 
 ## Usage
 
-* After build, do the following.
+* Installing実行後に以下を実行して下さい.
 ```
 docker compose up -d
 ```
-* After docker compose up -d, access the following.
+* docker compose up -d の後、以下にアクセスして下さい.
 ```
 http://localhost:8188
 ```
-* docker compose down to exit.
+* 終了する場合はdocker compose downして下さい.
 
 ## Version
 
