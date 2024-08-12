@@ -1,4 +1,4 @@
-FROM nvidia/cuda:12.1.0-base-ubuntu22.04
+FROM nvidia/cuda:12.4.1-base-ubuntu22.04
 
 ARG UID
 ARG GID
@@ -30,12 +30,8 @@ WORKDIR /ComfyUI
 USER ${USERNAME}
 
 # requirements pytorch
-#RUN pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu121 \
-#    pip install -r requirements.txt
-
 RUN pip install -r requirements.txt \
-    && pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu124 \
-    && pip install bitsandbytes
+ && pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu124
 
 # entry
 ENTRYPOINT ["/docker/entrypoint.sh"]
