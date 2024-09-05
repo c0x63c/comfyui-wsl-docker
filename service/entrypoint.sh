@@ -18,8 +18,8 @@ for to_path in "${!MOUNTS[@]}"; do
   fi
   if [ -d "$to_path" ]; then
     to_path_file="${to_path}/*"
-    if [ -n "$(ls $to_path_file 2> /dev/null)" ]; then
-      cp -f -p -r $to_path_file $from_path 2> /dev/null
+    if [ -n "$(ls $to_path_file > /dev/null)" ]; then
+      cp -f -p -r $to_path_file $from_path > /dev/null 
     fi
   fi
   rm -r -f "${to_path}"

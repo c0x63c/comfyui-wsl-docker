@@ -32,11 +32,11 @@ docker compose up -d
 ```
 http://localhost:8188
 ```
-* 終了する場合はdocker compose downして下さい.
+* 終了する場合はdocker compose stopして下さい.
 
 ## Version
 
-* 2024/08/12 fix: Add Flux required, remove version, update README.
+* 2024/09/05 fix: downした後にupで起動しなくなるバグを修正
 
 ## Acknowledgments
 
