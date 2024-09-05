@@ -32,7 +32,7 @@ docker compose up -d
 ```
 http://localhost:8188
 ```
-* docker compose down to exit.
+* docker compose stop to exit.
 
 ## Version
 
