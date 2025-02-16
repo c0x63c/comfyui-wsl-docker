@@ -36,7 +36,7 @@ http://localhost:8188
 
 ## Version
 
-* 2024/09/05 fix: downした後にupで起動しなくなるバグを修正
+* 2025/02/16 fix: userフォルダをvolumeに追加
 
 ## Acknowledgments
 

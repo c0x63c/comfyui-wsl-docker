@@ -36,7 +36,7 @@ http://localhost:8188
 
 ## Version
 
-* 2024/09/05 fix: Fixed a bug that prevented up from starting after down.
+* 2025/02/16 fix: Add user folder to volume.
 
 ## Acknowledgments
 
