@@ -31,7 +31,7 @@ USER ${USERNAME}
 
 # requirements pytorch
 RUN pip install -r requirements.txt \
- && pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu124
+ && pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu126
 
 # entry
 ENTRYPOINT ["/docker/entrypoint.sh"]

@@ -8,6 +8,7 @@ MOUNTS["/ComfyUI/input"]="/volumes/input"
 MOUNTS["/ComfyUI/output"]="/volumes/output"
 MOUNTS["/ComfyUI/custom_nodes"]="/volumes/custom_nodes"
 MOUNTS["/ComfyUI/models"]="/volumes/models"
+MOUNTS["/ComfyUI/user"]="/volumes/user"
 
 # make symbolik link and copy target dir under the files.
 for to_path in "${!MOUNTS[@]}"; do

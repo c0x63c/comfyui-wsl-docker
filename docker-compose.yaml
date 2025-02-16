@@ -19,6 +19,7 @@ services:
       - ./volumes/input:/volumes/input
       - ./volumes/output:/volumes/output
       - ./volumes/models:/volumes/models
+      - ./volumes/user:/volumes/user
     logging:
       options:
         max-size: '200k'
