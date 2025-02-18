@@ -30,7 +30,8 @@ WORKDIR /ComfyUI
 USER ${USERNAME}
 
 # requirements pytorch
-RUN pip install -r requirements.txt \
+RUN python3 -m pip install --upgrade pip \
+ && pip install -r requirements.txt \
  && pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu126
 
 # entry
