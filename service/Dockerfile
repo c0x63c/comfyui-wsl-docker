@@ -35,7 +35,7 @@ USER ${USERNAME}
 
 # requirements pytorch
 RUN python3 -m venv ./comfyui_venv && . ./comfyui_venv/bin/activate \
- && python3 -m pip install --upgrade pip \
+ && pip install --upgrade pip \
  && pip install -r requirements.txt \
  && pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu126 \
  && pip install sageattention triton
