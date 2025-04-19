@@ -4,9 +4,9 @@
 
 ### Prerequisites
 
-* Windows 11(64GB)
-* NVidia video card (RTX3060 12GB)
-* WSL2 (32GB and operation confirmed on Ubuntu 20.04)
+* Windows 11(196GB) + NVidia video card (RTX3060 12GB)
+* Windows 11(128GB) + NVidia video card (RTX5070ti 16GB)
+* WSL2 (32GB and operation confirmed on Ubuntu 20.04 or 24.04)
 
 *Not confirmed in other configurations than those listed above.
 
@@ -15,6 +15,14 @@
 * Build Docker with the following command
 ```
 docker compose build --build-arg UID="$(id -u)" --build-arg GID="$(id -g)" 
+```
+```
+# Other than RTX50XX
+docker compose build --build-arg UID="$(id -u)" --build-arg GID="$(id -g)" 
+```
+```
+# RTX50XX
+docker compose -f docker-compose_RTX50XX.yaml build --build-arg UID="$(id -u)" --build-arg GID="$(id -g)" 
 ```
 
 * Place checkpoint files (*.ckpt and *.safetensors) in /volumes/models/checkpoints.
@@ -26,7 +34,12 @@ docker compose build --build-arg UID="$(id -u)" --build-arg GID="$(id -g)"
 
 * After build, do the following.
 ```
+# Other than RTX50XX
 docker compose up -d
+```
+```
+# RTX50XX
+docker compose -f docker-compose_RTX50XX.yaml up -d
 ```
 * After docker compose up -d, access the following.
 ```
@@ -36,7 +49,7 @@ http://localhost:8188
 
 ## Version
 
-* 2025/02/16 fix: Add user folder to volume.
+* 2025/04/19 fix: Supports RTX50XX and PEP668 (using venv).
 
 ## Acknowledgments
 

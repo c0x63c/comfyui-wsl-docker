@@ -1,4 +1,4 @@
-FROM nvidia/cuda:12.6.0-base-ubuntu22.04
+FROM nvidia/cuda:12.8.1-base-ubuntu24.04
 
 ARG UID
 ARG GID
@@ -23,8 +23,9 @@ RUN chmod +x /docker/entrypoint.sh \
 # python3
 RUN apt update -y -q && DEBIAN_FRONTEND=noninteractive apt install -y -q --no-install-recommends \
     software-properties-common apt-utils \
-    sudo curl git git-lfs vim ffmpeg \
-    python3.10 python3-venv pip build-essential python3-dev \
+    curl git git-lfs vim ffmpeg \
+    python3.12 python3-venv pip \
+#    build-essential python3-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # git
@@ -35,10 +36,9 @@ USER ${USERNAME}
 
 # requirements pytorch
 RUN python3 -m venv ./comfyui_venv && . ./comfyui_venv/bin/activate \
- && python3 -m pip install --upgrade pip \
- && pip install -r requirements.txt \
- && pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu126 \
- && pip install sageattention triton
+# && pip install triton sageattention \
+ && pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128 \
+ && pip install -r requirements.txt
 
 # entry
 ENTRYPOINT ["/docker/entrypoint.sh"]

@@ -2,7 +2,7 @@ services:
   auto:
     build:
       context: .
-      dockerfile: ./service/Dockerfile
+      dockerfile: ./service/Dockerfile_RTX50XX
       args:
         - UID
         - GID

@@ -4,9 +4,9 @@
 
 ### Prerequisites
 
-* Windows 11(64GB)
-* NVidia video card (RTX3060 12GB)
-* WSL2 (32GB and operation confirmed on Ubuntu 20.04)
+* Windows 11(196GB) + NVidia video card (RTX3060 12GB)
+* Windows 11(128GB) + NVidia video card (RTX5070ti 16GB)
+* WSL2 (32GB and operation confirmed on Ubuntu 20.04 or 24.04)
 
 *上記以外の構成では未確認.
 
@@ -14,7 +14,12 @@
 
 * 以下のコマンドでDockerをビルド.
 ```
+# RTX50XX以外
 docker compose build --build-arg UID="$(id -u)" --build-arg GID="$(id -g)" 
+```
+```
+# RTX50XX
+docker compose -f docker-compose_RTX50XX.yaml build --build-arg UID="$(id -u)" --build-arg GID="$(id -g)" 
 ```
 
 * チェックポイントファイル（*.ckpt と *.safetensors）を /volumes/models/checkpoints に置きます.
@@ -26,7 +31,12 @@ docker compose build --build-arg UID="$(id -u)" --build-arg GID="$(id -g)"
 
 * Installing実行後に以下を実行して下さい.
 ```
+# RTX50XX以外の場合
 docker compose up -d
+```
+```
+# RTX50XXの場合
+docker compose -f docker-compose_RTX50XX.yaml up -d
 ```
 * docker compose up -d の後、以下にアクセスして下さい.
 ```
@@ -36,7 +46,7 @@ http://localhost:8188
 
 ## Version
 
-* 2025/02/16 fix: userフォルダをvolumeに追加
+* 2025/04/19 fix: RTX50XX対応
 
 ## Acknowledgments
 
