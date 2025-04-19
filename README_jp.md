@@ -46,7 +46,7 @@ http://localhost:8188
 
 ## Version
 
-* 2025/04/19 fix: RTX50XX対応
+* 2025/04/19 fix: RTX50XX対応 & PEP668対応(venv使用)
 
 ## Acknowledgments
 
