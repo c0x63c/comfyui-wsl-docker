@@ -8,7 +8,7 @@ ARG GROUPNAME
 ENV PYTHONUNBUFFERED=1 
 
 # user&group
-RUN groupadd -g ${GID} ${GROUPNAME} -f \
+RUN userdel -r ubuntu && groupadd -g ${GID} ${GROUPNAME} -f \
     && useradd -m -s /bin/bash -u ${UID} -g ${GID} ${USERNAME} \
     && echo ${USERNAME}:${PASSWD} | chpasswd \
     && gpasswd -a ${USERNAME} sudo
