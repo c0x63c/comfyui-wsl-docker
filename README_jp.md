@@ -46,7 +46,7 @@ http://localhost:8188
 
 ## Version
 
-* 2025/04/19 fix: RTX50XX対応 & PEP668対応(venv使用)
+* 2026/08/23 fix: RTX50XXに合わせ修正、使用するdockerをpytorchへ変更
 
 ## Acknowledgments
 
@@ -54,3 +54,4 @@ http://localhost:8188
 * [nVidia 525 + Cuda 11.8 + Python 3.10 + pyTorch GPU Docker image](https://dev.to/ordigital/nvidia-525-cuda-118-python-310-pytorch-gpu-docker-image-1l4a)
 * [stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) 
 * [docker-composeを使う上でホストとコンテナのユーザーIDとグループIDを揃える](https://qiita.com/ma-me/items/c80f7f8bf9a61cbd21f7)
+* [DockerでComfyUI環境を構築してQwen-Imageを試す](https://qiita.com/devgamesan/items/4226860d5fe802a23901)
