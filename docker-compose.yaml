@@ -13,7 +13,7 @@ services:
     environment:
 #      CLI_ARGS: '--use-sage-attention'
 #      CLI_ARGS: '--fast --max-upload-size 200'
-      CLI_ARGS: ''
+      CLI_ARGS: '--enable-manager'
     ports:
       - '8188:8188/tcp'
     network_mode: 'host'

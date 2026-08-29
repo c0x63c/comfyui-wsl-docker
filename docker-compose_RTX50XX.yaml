@@ -11,7 +11,7 @@ services:
         - GROUPNAME=docker
     container_name: comfyui01
     environment:
-      CLI_ARGS: '--use-sage-attention'
+      CLI_ARGS: '--use-sage-attention --enable-manager'
 #      CLI_ARGS: '--fast --max-upload-size 200'
 #      CLI_ARGS: ''
     ports:

@@ -21,7 +21,6 @@ RUN chmod +x /docker/entrypoint.sh \
     && chown ${GROUPNAME}:${USERNAME} /docker/entrypoint.sh
 
 # system
-# python3
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt install -y -q --no-install-recommends \
     git \
     && rm -rf /var/lib/apt/lists/*
@@ -33,7 +32,8 @@ WORKDIR /ComfyUI
 USER ${USERNAME}
 
 # requirements pytorch
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt \
+  && pip install -r manager_requirements.txt
 
 # entry
 ENTRYPOINT ["/docker/entrypoint.sh"]

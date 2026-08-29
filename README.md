@@ -1,6 +1,7 @@
 ### Description
 * ComfyUI's docker compose for WSL2 (GPU support).
 * The feature is that folders under volumes are treated as symbolic links in docker, so you only need to place local files in the volumes folder.
+* Uses a Docker image with PyTorch 2.9.0, CUDA 13.0, and Python 13.3.
 
 ### Prerequisites
 
@@ -45,7 +46,7 @@ http://localhost:8188
 
 ## Version
 
-* 2026/08/23 fix: Updated for RTX 50 series, Switched Docker image to PyTorch.
+* 2026/08/29 fix: Enabled installation of ComfyUI-Manager dependencies.
 
 ## Acknowledgments
 

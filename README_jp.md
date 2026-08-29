@@ -1,6 +1,7 @@
 ### Description
 * ComfyUIのWSL2向けdocker compose(GPU対応)です.
 * 特徴としては,volumes配下のフォルダはdocker内でシンボリックリンクとして扱われる為,ローカルのファイルをvolumes配下のフォルダに配置するのみで大丈夫です.
+* PyTorch:2.9.0 CUDE13.0 python13.3のDockerイメージを使用
 
 ### Prerequisites
 
@@ -46,7 +47,7 @@ http://localhost:8188
 
 ## Version
 
-* 2026/08/23 fix: RTX50XXに合わせ修正、使用するdockerをpytorchへ変更
+* 2026/08/29 fix: ComfyUI-Managerの依存関係をインストールできるように変更
 
 ## Acknowledgments
 
