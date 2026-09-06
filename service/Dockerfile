@@ -33,7 +33,8 @@ USER ${USERNAME}
 
 # requirements pytorch
 RUN pip install -r requirements.txt \
-  && pip install -r manager_requirements.txt
+  && pip install -r manager_requirements.txt \
+  && pip install comfy-mcp
 
 # entry
 ENTRYPOINT ["/docker/entrypoint.sh"]

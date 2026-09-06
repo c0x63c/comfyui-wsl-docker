@@ -46,7 +46,7 @@ http://localhost:8188
 
 ## Version
 
-* 2026/08/29 fix: Enabled installation of ComfyUI-Manager dependencies.
+* 2026/09/06 fix: Enabled installation of ComfyUI-MCP dependencies.
 
 ## Acknowledgments
 

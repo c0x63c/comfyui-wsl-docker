@@ -47,7 +47,7 @@ http://localhost:8188
 
 ## Version
 
-* 2026/08/29 fix: ComfyUI-Managerの依存関係をインストールできるように変更
+* 2026/09/06 fix: ComfyUI-MCPの依存関係をインストールできるように変更
 
 ## Acknowledgments
 
