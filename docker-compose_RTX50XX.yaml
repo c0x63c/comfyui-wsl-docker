@@ -2,7 +2,8 @@ services:
   auto:
     build:
       context: .
-      dockerfile: ./service/Dockerfile_RTX50XX
+      #dockerfile: ./service/Dockerfile_RTX50XX
+      dockerfile: ./service/ComfyCli_Dockerfile_RTX50XX
       args:
         - UID
         - GID

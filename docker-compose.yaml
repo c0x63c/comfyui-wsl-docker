@@ -2,7 +2,8 @@ services:
   auto:
     build:
       context: .
-      dockerfile: ./service/Dockerfile
+      #dockerfile: ./service/Dockerfile
+      dockerfile: ./service/ComfyCli_Dockerfile
       args:
         - UID
         - GID

@@ -1,0 +1,27 @@
+FROM pytorch/pytorch:2.14.0-cuda13.2-cudnn9-runtime
+
+ARG UID
+ARG GID
+ARG PASSWD
+ARG USERNAME
+ARG GROUPNAME
+ENV PYTHONUNBUFFERED=1 
+ENV PIP_BREAK_SYSTEM_PACKAGES=1
+
+# shell
+COPY ./service/entrypoint.sh /docker/entrypoint.sh
+RUN chmod +x /docker/entrypoint.sh \
+    && chown ${GID}:${UID} /docker/entrypoint.sh
+
+# system
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  git build-essential python3.12 python3-venv pip \
+  && rm -rf /var/lib/apt/lists/*
+
+# requirements pytorch
+RUN pip install comfy-cli comfy-mcp \
+    && comfy install --nvidia
+
+# entry
+ENTRYPOINT ["/docker/entrypoint.sh"]
+CMD comfy launch

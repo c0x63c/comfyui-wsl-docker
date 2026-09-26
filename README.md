@@ -46,7 +46,7 @@ http://localhost:8188
 
 ## Version
 
-* 2026/09/06 fix: Enabled installation of ComfyUI-MCP dependencies.
+* 2026/09/26 fix: Added ComfyCLI-based installation.
 
 ## Acknowledgments
 
